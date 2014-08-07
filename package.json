@@ -1,0 +1,30 @@
+{
+  "name": "node-pcm-audio",
+  "version": "0.0.0",
+  "description": "PCM Utilities",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jproulx/node-pcm-audio.git"
+  },
+  "keywords": [
+    "pcm",
+    "audio"
+  ],
+  "author": "Jesse Proulx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jproulx/node-pcm-audio/issues"
+  },
+  "homepage": "https://github.com/jproulx/node-pcm-audio",
+  "dependencies": {
+    "debug": "^1.0.4",
+    "readable-stream": "^1.0.27-1"
+  }
+}
