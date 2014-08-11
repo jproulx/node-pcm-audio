@@ -6,14 +6,13 @@ var format  = {
     'bitDepth'   : 32
 };
 var Signal = new Tone(format)
-    .setFrequency(40)
+    .setFrequency(440)
     .setType(Tone.Sine);
-
-var types = ['Sine','Square','Sawtooth','Triangle'];
-setInterval(function () {
-    Signal
-        .setFrequency((Math.random() * 40) + 40);
-        //.setType(Tone[types[Math.floor(Math.random() * types.length)]]);
-}, 0);
+//var types = ['Sine','Square','Sawtooth','Triangle'];
+//setInterval(function () {
+//    Signal
+//        .setFrequency((Math.random() * 40) + 400)
+//        .setType(Tone[types[Math.floor(Math.random() * types.length)]]);
+//}, 0);
 
 Signal.pipe(new Speaker(format));
