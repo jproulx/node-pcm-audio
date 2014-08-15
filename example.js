@@ -5,14 +5,22 @@ var format  = {
     'sampleRate' : 96000,
     'bitDepth'   : 32
 };
+var speaker   = new Speaker(format);
+var frequency = 110;
 var Signal = new Tone(format)
-    .setFrequency(440)
-    .setType(Tone.Sine);
-//var types = ['Sine','Square','Sawtooth','Triangle'];
-//setInterval(function () {
-//    Signal
-//        .setFrequency((Math.random() * 40) + 400)
-//        .setType(Tone[types[Math.floor(Math.random() * types.length)]]);
-//}, 0);
+    .setFrequency(frequency)
+    .setType(Tone.Sawtooth);
+var types = ['Sine','Square','Sawtooth','Triangle'];
+var interval = setInterval(function () {
+    Signal
+        .setFrequency(frequency += 0.01);
 
-Signal.pipe(new Speaker(format));
+    console.log(frequency);
+    if (Math.round(frequency) == 1000) {
+        Signal.unpipe(speaker);
+        clearInterval(interval);
+
+    }
+}, 0);
+
+Signal.pipe(speaker);
